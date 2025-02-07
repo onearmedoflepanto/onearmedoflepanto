@@ -72,6 +72,25 @@
     
 #     return field
 
+# grid = [
+#     [1, 2, 1, 3, 1],
+#     [2, 2, 2, 2, 2],
+#     [1, 0, 1, 0, 1],
+#     [3, 1, 2, 1, 3]
+# ]
+
+# directions=[(1,1),(1,-1),(-1,1),(-1,-1)]
+
+# sums=0
+# x, y = map(int, input().split())
+# for dx,dy in directions:
+#     nx=x+dx
+#     ny=y+dy
+
+#     sums+=grid[nx][ny]
+
+# print(sums)
+
 grid = [
     [1, 2, 1, 3, 1],
     [2, 2, 2, 2, 2],
@@ -86,7 +105,8 @@ x, y = map(int, input().split())
 for dx,dy in directions:
     nx=x+dx
     ny=y+dy
+    if nx>=0 and nx<5 and ny>=0 and ny<5:
+        sums+=grid[nx][ny]
 
-    sums+=grid[nx][ny]
 
 print(sums)
