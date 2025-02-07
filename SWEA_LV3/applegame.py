@@ -29,4 +29,4 @@ for T in range(1,T_input+1):
             steps +=1
 
         if l % 2 == 0:
-            pass
+            if arr[l][]
