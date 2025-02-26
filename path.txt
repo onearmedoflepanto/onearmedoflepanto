@@ -1,4 +1,4 @@
 chmod +x submit.sh
 
-echo "alias submit='C\SSAFY\submit.sh'" >> ~/.bashrc
+echo "alias submit='C:/git/onearmedoflepanto/submit.sh'" >> ~/.bashrc
 source ~/.bashrc
