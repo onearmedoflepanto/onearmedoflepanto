@@ -1,28 +1,23 @@
-def isprime(n):
-    if n < 2 or n in [2, 3] or n % 2 == 0 or n % 3 == 0:
-        return False
+def dfs(r, c, string):
+    directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+    if len(string) == 7:
+        res.add(string)
+        return
 
-    i = 5
-    while i**2 <= n:
-        if n % i == 0 or n % (i + 2) == 0:
-            return False
-
-        i += 6
-    return True
+    for dr, dc in directions:
+        nr, nc = r + dr, c + dc
+        if 0 <= nr < n and 0 <= nc < n:
+            dfs(nr, nc, string + grid[nr][nc])
 
 
 tc = int(input())
+n = 4
+for t in range(1, tc + 1):
+    grid = [list(input().split()) for _ in range(n)]
+    res = set()
 
-for t in range(tc):
-    n = int(input())
+    for i in range(n):
+        for j in range(n):
+            dfs(i, j, grid[i][j])
 
-    if n % 2 == 0:
-        n += 1
-
-    if isprime(n):
-        print(n)
-    else:
-        while not isprime(n):
-            n += 2
-
-        print(n)
+    print(f"#{t} {len(res)}")
